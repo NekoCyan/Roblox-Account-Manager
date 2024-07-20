@@ -2018,7 +2018,8 @@ namespace RBX_Alt_Manager
                     if (!string.IsNullOrEmpty(account.GetField("SavedJobId"))) JobId = account.GetField("SavedJobId");
                 }
 
-                await account.JoinServer(PlaceId, JobId, FollowUser, VIPServer);
+                // Put await in this will make occur in other accounts since it need to wait to exit process.
+                account.JoinServer(PlaceId, JobId, FollowUser, VIPServer);
 
                 if (AsyncJoin)
                 {
